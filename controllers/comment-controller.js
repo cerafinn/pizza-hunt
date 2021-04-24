@@ -21,7 +21,7 @@ const commentController = {
       .catch(err => res.json(err));
   },
 
-  removeComment() {
+  removeComment({ params }, res) {
     Comment.findOneAndDelete({ _id: params.commentId })
       .then(deletedComment => {
         if (!deletedComment) {
@@ -40,7 +40,7 @@ const commentController = {
         }
         res.json(dbPizzaData);
       })
-      .catch(err => res.json(err))
+      .catch(err => res.json(err));
   }
 };
 
