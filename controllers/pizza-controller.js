@@ -8,11 +8,11 @@ const pizzaController = {
         select: '-__v'
       })
       .select('-__v')
-      .sort({ id: -1 })
+      .sort({ _id: -1 })
       .then(dbPizzaData => res.json(dbPizzaData))
       .catch(err => {
         console.log(err);
-        res.status(400).json(err);
+        res.sendStatus(400);
       });
   },
 
